@@ -1,5 +1,6 @@
 package rocks.zipcodewilmington;
 
+import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.animal_creation.AnimalFactory;
@@ -20,7 +21,7 @@ public class DogHouseTest {
     @Test
     public void testGetNumberOfDogs() {
         // Given (some
-        String name = "Milo";
+        String name = "Tramp";
         Date birthDate = new Date();
         Dog animal = AnimalFactory.createDog(name, birthDate);
         DogHouse.clear();
@@ -33,30 +34,51 @@ public class DogHouseTest {
     }
     @Test
     public void addTest(){
-        //Given:
-        //When:
-        //Them:
+        //Given
+        String expected = "Molly";
+        Dog dog = new Dog("Molly", new Date(), 56);
+        //When
+        DogHouse.add(dog);
+        Dog actual = DogHouse.getDogById(56);
+        //Then
+        Assert.assertEquals(expected, actual.getName());
     }
 
     @Test
     public void removeIdTest(){
-        //Given:
-        //When:
-        //Them:
+        //Given
+        Dog dog = new Dog("Marly", null, 70);
+        DogHouse.add(dog);
+        //When
+        DogHouse.remove(70);
+        Dog actual = DogHouse.getDogById(70);
+        //Then
+        Assert.assertNull(actual);
     }
 
     @Test
-    public void removeCatTest(){
-        //Given:
-        //When:
-        //Them:
+    public void removeDogTest(){
+        //Given
+        Dog dog = new Dog("Howard", null, 54);
+        Integer expected = null;
+        DogHouse.add(dog);
+        //When
+        DogHouse.remove(dog);
+        Dog actual = DogHouse.getDogById(54);
+        //Then
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void getDogByIdTest(){
-        //Given:
-        //When:
-        //Them:
+        //Given
+        Dog dog = new Dog("Lilly", null, 41);
+        String expected = "Lilly";
+        DogHouse.add(dog);
+        //When
+        Dog actual = DogHouse.getDogById(41);
+        //Then
+        Assert.assertEquals(expected, actual.getName());
     }
 
 }
