@@ -15,6 +15,12 @@ public class DogTest {
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+
+    @Test
+    public void constructorTest(){
+
+    }
+
     @Test
     public void setNameTest() {
         // Given (a name exists and a dog exists)
@@ -27,5 +33,29 @@ public class DogTest {
         // Then (we expect to get the given name from the dog)
         String dogName = dog.getName();
         Assert.assertEquals(dogName, givenName);
+    }
+    @Test
+    public void speakTest(){
+        //Given:
+        //When:
+        //Them:
+    }
+    @Test
+    public void setBirthDateTest(){
+        //Given:
+        //When:
+        //Them:
+    }
+    @Test
+    public void eatTest(){
+        //Given:
+        //When:
+        //Them:
+    }
+    @Test
+    public void getIdTest(){
+        //Given:
+        //When:
+        //Them:
     }
 }
