@@ -43,9 +43,14 @@ public class CatHouseTest {
 
     @Test
     public void removeCatTest(){
-        //Given:
-        //When:
-        //Then:
+        //Given
+        Cat cat = new Cat("Holly",null,55);
+        CatHouse.add(cat);
+        //When
+        CatHouse.remove(cat);
+        Cat actual = CatHouse.getCatById(55);
+        //Then
+        Assert.assertNull(actual);
     }
 
     @Test
